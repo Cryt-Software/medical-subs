@@ -9,6 +9,7 @@ import MainLayout from 'src/layouts/main';
 import ScrollProgress from 'src/components/scroll-progress';
 
 import HomeHero from '../home-hero';
+import HomeWhyAlyve from '../home-why-alyve';
 import HomePublications from '../home-publications';
 import HomeTestimonials from '../home-testimonials';
 import HomeProfilesDemo from '../home-profiles-demo';
@@ -36,6 +37,8 @@ export default function HomeView() {
         <HomeProfilesDemo />
 
         <HomeTestimonials />
+
+        <HomeWhyAlyve />
       </Box>
     </MainLayout>
   );
