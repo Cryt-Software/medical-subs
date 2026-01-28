@@ -17,6 +17,13 @@ const ROOTS = {
 // ----------------------------------------------------------------------
 
 export const paths = {
+  // Main Navigation
+  shop: '/shop',
+  learn: '/learn',
+  ourStory: '/our-story',
+  referAFriend: '/refer-a-friend',
+  quiz: '/quiz',
+  // Legacy paths
   comingSoon: '/coming-soon',
   maintenance: '/maintenance',
   pricing: '/pricing',

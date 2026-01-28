@@ -1,30 +1,28 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Badge, { badgeClasses } from '@mui/material/Badge';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 
 import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
 import { useResponsive } from 'src/hooks/use-responsive';
 
 import { bgBlur } from 'src/theme/css';
 
-import Logo from 'src/components/logo';
-import Label from 'src/components/label';
+import Iconify from 'src/components/iconify';
 
 import NavMobile from './nav/mobile';
 import NavDesktop from './nav/desktop';
 import { HEADER } from '../config-layout';
 import { navConfig } from './config-navigation';
-import LoginButton from '../common/login-button';
 import HeaderShadow from '../common/header-shadow';
-import SettingsButton from '../common/settings-button';
 
 // ----------------------------------------------------------------------
 
@@ -59,47 +57,81 @@ export default function Header() {
         }}
       >
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
-          <Badge
+          {/* Logo - Left aligned */}
+          <Box
+            component={RouterLink}
+            href="/"
             sx={{
-              [`& .${badgeClasses.badge}`]: {
-                top: 8,
-                right: -16,
-              },
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
             }}
-            badgeContent={
-              <Link
-                href={paths.changelog}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-                sx={{ ml: 1 }}
-              >
-                <Label color="info" sx={{ textTransform: 'unset', height: 22, px: 0.5 }}>
-                  v5.7.0
-                </Label>
-              </Link>
-            }
           >
-            <Logo />
-          </Badge>
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: 800,
+                color: 'text.primary',
+                letterSpacing: 2,
+                fontFamily: theme.typography.fontSecondaryFamily,
+              }}
+            >
+              ALYVE
+            </Typography>
+          </Box>
 
+          {/* Spacer */}
           <Box sx={{ flexGrow: 1 }} />
 
+          {/* Center Navigation */}
           {mdUp && <NavDesktop data={navConfig} />}
 
-          <Stack alignItems="center" direction={{ xs: 'row', md: 'row-reverse' }}>
-            <Button variant="contained" target="_blank" rel="noopener" href={paths.minimalUI}>
-              Purchase Now
-            </Button>
+          {/* Spacer */}
+          <Box sx={{ flexGrow: 1 }} />
 
-            {mdUp && <LoginButton />}
+          {/* Right Section - Icons and CTA */}
+          <Stack alignItems="center" direction="row" spacing={{ xs: 1, md: 2 }}>
+            {mdUp && (
+              <>
+                {/* Shopping Bag Icon */}
+                <IconButton
+                  component={RouterLink}
+                  href={paths.shop}
+                  sx={{ color: 'text.primary' }}
+                >
+                  <Iconify icon="solar:bag-3-bold" width={24} />
+                </IconButton>
 
-            <SettingsButton
+                {/* User Account Icon */}
+                <IconButton
+                  component={RouterLink}
+                  href={paths.authDemo.classic.login}
+                  sx={{ color: 'text.primary' }}
+                >
+                  <Iconify icon="solar:user-circle-bold" width={24} />
+                </IconButton>
+              </>
+            )}
+
+            {/* Start Quiz Button */}
+            <Button
+              component={RouterLink}
+              href={paths.quiz}
+              variant="contained"
               sx={{
-                ml: { xs: 1, md: 0 },
-                mr: { md: 2 },
+                bgcolor: '#F4C430',
+                color: 'common.black',
+                fontWeight: 600,
+                borderRadius: 3,
+                px: { xs: 2, md: 3 },
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#E0B02B',
+                },
               }}
-            />
+            >
+              Start Quiz
+            </Button>
 
             {!mdUp && <NavMobile data={navConfig} />}
           </Stack>
