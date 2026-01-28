@@ -10,6 +10,7 @@ import ScrollProgress from 'src/components/scroll-progress';
 
 import HomeHero from '../home-hero';
 import HomePublications from '../home-publications';
+import HomeProfilesDemo from '../home-profiles-demo';
 
 // ----------------------------------------------------------------------
 
@@ -30,6 +31,8 @@ export default function HomeView() {
         }}
       >
         <HomePublications />
+
+        <HomeProfilesDemo />
       </Box>
     </MainLayout>
   );
