@@ -33,12 +33,13 @@ export const grey = {
   900: '#161C24',
 };
 
+// Teal/Turquoise - Primary brand color for ALYVE vitamins
 export const primary = {
-  lighter: '#C8FAD6',
-  light: '#5BE49B',
-  main: '#00A76F',
-  dark: '#007867',
-  darker: '#004B50',
+  lighter: '#B8E8E8',
+  light: '#6DD4D4',
+  main: '#4DB8B8',
+  dark: '#3A9999',
+  darker: '#2A7070',
   contrastText: '#FFFFFF',
 };
 
@@ -51,12 +52,13 @@ export const secondary = {
   contrastText: '#FFFFFF',
 };
 
+// Sky Blue - Background gradient color for ALYVE
 export const info = {
-  lighter: '#CAFDF5',
-  light: '#61F3F3',
-  main: '#00B8D9',
-  dark: '#006C9C',
-  darker: '#003768',
+  lighter: '#E8F4FC',
+  light: '#B8DFF5',
+  main: '#A8D8E8',
+  dark: '#7ABCD4',
+  darker: '#4A9AB8',
   contrastText: '#FFFFFF',
 };
 
@@ -69,12 +71,13 @@ export const success = {
   contrastText: '#ffffff',
 };
 
+// Gold/Yellow - CTA button color for ALYVE
 export const warning = {
-  lighter: '#FFF5CC',
-  light: '#FFD666',
-  main: '#FFAB00',
-  dark: '#B76E00',
-  darker: '#7A4100',
+  lighter: '#FFF8DC',
+  light: '#F8DC6C',
+  main: '#F4C430',
+  dark: '#E0B02B',
+  darker: '#B8901F',
   contrastText: grey[800],
 };
 
